@@ -10,15 +10,12 @@ male(mark).
 % brotherInLaw(mark, tina). will be true
 
 % I implemented these backwards if youre wondering why its y, x
-% lazy solution was to swap the names
 % Brother of someone you are married to 
 brotherInLaw(X, Y) :- male(Y), (sibling(X, Z); sibling(Z, X)), (married(Y, Z); married(Z, Y)).
 % if they are male and married to one of your siblings.
-brotherInLaw(Y, X) :- male(Y), (married(Y, Z); married(Z, Y)), (sibling(Z, X); sibling(X, Z)).
+brotherInLaw(X, Y) :- male(Y), (married(Y, Z); married(Z, Y)), (sibling(Z, X); sibling(X, Z)).
 
-
-
-/* 
-* Write a uniques/2 rule that finds all of the unique elements in a list. The first argument should be an input list and the second argument is the return value. The query uniques([4, 2, ana, 5, 2, cat, ana], L). should result in L = [4, 5, cat]. */ 
+/* Write a uniques/2 rule that finds all of the unique elements in a list. The first argument should be an input list and the second argument is the return value. The query uniques([4, 2, ana, 5, 2, cat, ana], L). should result in L = [4, 5, cat]. */ 
+uniques(X, Y) :- Z
 
 
